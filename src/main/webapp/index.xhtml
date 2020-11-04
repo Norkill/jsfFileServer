@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+    <h:head>
+        <title>File Server Login</title>
+    </h:head>
+    <h:body>
+        <h1>Please Log in with your account</h1>
+        
+        <br/>
+        <h:form>
+            <h:outputLabel for="username" value="Username" />
+            <h:inputText id="username" value="#{userSessionBean.user.username}" required="true" validatorMessage="Enter your username"/>
+            
+            <br/>
+            <h:outputLabel for="pwd" value="Password" />
+            <h:inputText id="pwd" value="#{userSessionBean.user.pwd}" required="true" validatorMessage="Enter your password"/>
+            
+            <br/>
+            <h:messages/>
+            <br/>
+            
+            <h:commandButton id="loginButton" value="Login" action="#{userSessionBean.login}" />
+
+        </h:form>
+        <br/>
+        
+    </h:body>
+</html>
