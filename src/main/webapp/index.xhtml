@@ -9,21 +9,22 @@
     </h:head>
     <h:body>
         <h1>Please Log in with your account</h1>
-        
+        <br/>
+        <h4>No Account yet, make one <h:commandLink value="Here" action="register.xhtml"/></h4>
         <br/>
         <h:form>
             <h:outputLabel for="username" value="Username" />
-            <h:inputText id="username" value="#{userSessionBean.user.username}" required="true" validatorMessage="Enter your username"/>
+            <h:inputText id="username" value="#{userLoginBean.username}" required="true" validatorMessage="Enter your username"/>
             
             <br/>
             <h:outputLabel for="pwd" value="Password" />
-            <h:inputText id="pwd" value="#{userSessionBean.user.pwd}" required="true" validatorMessage="Enter your password"/>
+            <h:inputText id="pwd" value="#{userLoginBean.pwd}" required="true" validatorMessage="Enter your password"/>
             
             <br/>
             <h:messages/>
             <br/>
             
-            <h:commandButton id="loginButton" value="Login" action="#{userSessionBean.login}" />
+            <h:commandButton id="loginButton" value="Login" action="#{userLoginBean.login}" />
 
         </h:form>
         <br/>
