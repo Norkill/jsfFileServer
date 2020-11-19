@@ -9,7 +9,10 @@
     </h:head>
     <h:body>
         <h1>Logged in as: #{userSessionBean.user.username}</h1>
-        
+        <h:form id="uploadForm">
+        	<h:inputFile id="uploadFile" value="#{fileUploadBean.file}" />
+        	<h:commandButton value="Upload" action="#{fileUploadBean.save}" />
+        </h:form>
        
     </h:body>
 </html>

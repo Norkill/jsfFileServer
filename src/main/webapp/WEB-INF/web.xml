@@ -7,6 +7,11 @@
     <param-value>true</param-value>
   </context-param>
   
+  <context-param>
+  	<param-name>upload.location</param-name>
+  	<param-value>/home/norkill/FileServerFiles/</param-value>
+  </context-param>
+  
   <servlet>
     <servlet-name>facesServlet</servlet-name>
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>

@@ -10,19 +10,20 @@
     <h:body>
         <h1>Please Log in with your account</h1>
         <br/>
-        <h4>Existing user, log in <h:commandLink value="Here" action="index.xhtml"/></h4>
+        <h4>Existing user, log in <h:link value="Here" outcome="login"/></h4> 
         <br/>
-        <h:form>
+        <h:form> 
             <h:outputLabel for="username" value="Username" />
-            <h:inputText id="username" value="#{userRegisterBean.username}" required="true" validatorMessage="Enter your username"/>
+            <h:inputText id="username" value="#{userRegisterBean.user.username}" required="true" requiredMessage="Enter your username"/>
             
             <br/>
             <h:outputLabel for="pwd" value="Password" />
-            <h:inputText id="pwd" value="#{userRegisterBean.pwd}" required="true" validatorMessage="Enter your password"/>
-            
+            <h:inputText id="pwd" value="#{userRegisterBean.user.pwd}" required="true" requiredMessage="Enter your password" validator="passwordEqualityValidator" >
+            	<f:attribute name="confirm" value="#{confirm}" />
+            </h:inputText>
             <br/>
             <h:outputLabel for="pwdConfirm" value="Confirm Password" />
-            <h:inputText id="pwdConfirm" required="true" validatorMessage="Enter your password"/>
+            <h:inputText id="pwdConfirm" binding="#{confirm}" required="true" requiredMessage="Repeat password" />
             
             <br/>
             <h:messages/>

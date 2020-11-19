@@ -17,11 +17,13 @@ public class UserLoginBean {
 	
 	@Inject
 	private UserService userService;
-	
+	//@Inject
+	//private FileService fileService;
+
 	@Inject
 	private UserSession session;
 	
-
+	
 
 	public String login() {
 		
@@ -36,7 +38,9 @@ public class UserLoginBean {
 		}
 		//User found, set in session
 		session.setUser(user);
-		return "loggedIn.xhtml";		
+		//Set current dir to base dir
+		session.setCurrentDir(session.getUser().getUserRootDirectory());
+		return "success";		
 	}
 
 
